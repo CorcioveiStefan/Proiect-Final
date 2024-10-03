@@ -58,7 +58,6 @@ header nav .cart {
   line-height: 24px;
   letter-spacing: 3px;
   color : #333333;
-  user-select: none;
 }
 
 .banner .banner-overlay h2 {
