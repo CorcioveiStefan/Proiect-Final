@@ -4,28 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="/GlobalCSS/Global.css">
+  <link rel="stylesheet" href="/GlobalCSS/TopNav.css">
   <link rel="stylesheet" href="Home.css">
+  <link rel="stylesheet" href="/GlobalCSS/Footer.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <nav>
       <div class = "logo">
-        <a href="Home.html"><img src="check-this-out.png" alt="logo" width="120px" height="80px"></a>
+        <a href="Home.html"><img src="/Assets/check-this-out.png" alt="logo" width="120px" height="80px"></a>
       </div>
       <div class = "pages">
         <a href="Home.html">Home</a>
-        <a href="Shop.html">Shop</a>
+        <a href="/Shop/Shop.html">Shop</a>
       </div>
       <div class="cart">
-        <a href=""><img src="/Cart.png" alt="Cart" width="25px"></a>
+        <a href=""><img src="/Assets/Cart.png" alt="Cart" width="25px"></a>
       </div>
     </nav>
     <div class = "banner">
+      <div class = "banner-overlay">
+        <span>New Arrival</span>
+        <h2>Discover Our</br> New Products</h2>
+        <p>At CTO-Store, we believe in providing our customers with an exceptional shopping experience and a diverse range of products.</p>
+        <a href="/Shop/Shop.html"><button>BUY NOW</button></a>
+      </div>
     </div>
   </header>
   <main>
+    <h1>Our Products</h1>
     <div class="listaProduse">
+    </div>
+    <div class="buttonMain">
+      <button>Show More</button>
     </div>
   </main>
   <footer>
@@ -60,6 +73,6 @@
       </div> 
       <div class="copyright"><p>2023 furino. All rights reverved</p></div> 
   </footer>
-  <script src="Home.js"></script>
+  <script type="module" src="Home.js"></script>
 </body>
 </html>
