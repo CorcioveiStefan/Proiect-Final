@@ -12,7 +12,8 @@
 .banner .banner-overlay {
   position: absolute;
   background-color: rgba(245, 245, 245, 0.9);
-  bottom: 117px;
+  bottom: 10%;
+  top: 10%;
   right: 57px;
   max-width: 640px;
   max-height: 440px;
@@ -88,74 +89,5 @@ main .buttonMain {
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
-}
-
-.listaProduse {
-  padding: 0 100px;
-  display :flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 15px;
-}
-
-.unProdus {
-  background-color: white;
-  flex: 1 1 240px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 27px;
-  align-items: center;
-}
-
-.unProdusImg {
-  height: 200px;
-  padding: 10px;
-}
-
-.unProdusInfo {
-  padding: 10px;
-  background-color: rgba(144, 164, 174, 0.8);
-
-  width: 100%;
-}
-
-.unProdusInfo h4 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 200px;
-  
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 29px;
-}
-
-.unProdusInfo .descriere p {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 150px;
-  
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  color: #898989;
-}
-
-.unProdusInfo .pret p {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 30px;
-  color: #3a3a3a;
-}
-
-.unProdusImg img {
-  width: 200px;
-  max-height: 230px;
-}
-
-.unProdus button {
-  display: none;
 }
 

@@ -1,5 +1,3 @@
-import { printeazaUnProdus, printeazaToateProdusele } from '../GlobalJS/PrintareProduse.js';
-
 let currentPage = 1;
 const productsPerPage = 8;
 

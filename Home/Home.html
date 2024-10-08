@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="/GlobalCSS/TopNav.css">
   <link rel="stylesheet" href="Home.css">
   <link rel="stylesheet" href="/GlobalCSS/Footer.css">
+  <link rel="stylesheet" href="/GlobalCSS/Cart.css">
+  <link rel="stylesheet" href="/GlobalCSS/ListaProduse.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,7 +23,7 @@
         <a href="/Shop/Shop.html">Shop</a>
       </div>
       <div class="cart">
-        <a href=""><img src="/Assets/Cart.png" alt="Cart" width="25px"></a>
+        <a href="" id="cartButton"><img src="/Assets/Cart.png" alt="Cart" width="25px"></a>
       </div>
     </nav>
     <div class = "banner">
@@ -73,6 +75,18 @@
       </div> 
       <div class="copyright"><p>2023 furino. All rights reverved</p></div> 
   </footer>
-  <script type="module" src="Home.js"></script>
+
+
+  <div id="cartDiv">
+    <h3>Shopping Cart</h3>
+    <div class="cosProduse"></div>
+  </div> 
+  <div class="cartOverlay" id="overlay"></div>
+
+
+  <script src="Home.js"></script>
+  <script src="/GlobalJS/Cart.js"></script>
+  <script src="/GlobalJS/PrintareProduse.js"></script>
+
 </body>
 </html>

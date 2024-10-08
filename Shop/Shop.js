@@ -1,7 +1,6 @@
-import { printeazaUnProdus, printeazaToateProdusele } from '../GlobalJS/PrintareProduse.js';
-
 let currentPage = 1;
 const productsPerPage = 8;
+const totalProducts = 20;
 
 // === Function to handle paginated product display ===
 const printeazaProdusePaginate = (produseStoc, paginaCurenta) => {
@@ -18,6 +17,9 @@ const printeazaProdusePaginate = (produseStoc, paginaCurenta) => {
 
     // Show/Hide buttons based on the current page
     updatePaginationButtons(produseStoc.length);
+    
+    // Update breadcrumb
+    updateBreadcrumb(paginaCurenta, productsPerPage, produseStoc.length); // Update breadcrumb here
 };
 
 // === Fetch products from the server ===
@@ -119,3 +121,12 @@ document.querySelector('.nextPage').addEventListener('click', loadNextPage);
 
 // === Load the initial products when the page is ready ===
 document.addEventListener('DOMContentLoaded', loadInitialProducts);
+
+// === Update breadcrumb function ===
+function updateBreadcrumb(currentPage, productsPerPage, totalProducts) {
+    const start = (currentPage - 1) * productsPerPage + 1; // Calculate the starting index
+    const end = Math.min(currentPage * productsPerPage, totalProducts); // Calculate the ending index
+
+    const breadcrumbText = `Showing ${start}–${end} of ${totalProducts} results`;
+    document.querySelector('.shop-breadcrumb').innerHTML = `<div>${breadcrumbText}</div>`;
+}
