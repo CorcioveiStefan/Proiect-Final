@@ -1,7 +1,7 @@
 .banner {
   width: 100%; /* Lățimea containerului */
   aspect-ratio: 4.5 / 1; /* Înălțimea containerului */
-  background-image: url('/Assets/dall2.jpg'); 
+  background-image: url("/Assets/dall2.jpg");
   background-size: cover; /* Face ca imaginea să acopere complet containerul */
   background-position: top; /* Centrează imaginea */
   background-repeat: no-repeat;
@@ -32,7 +32,7 @@
 }
 
 main {
-  background-color: #f5f5f5 ;
+  background-color: #f5f5f5;
 }
 
 .listaProduse {
@@ -59,17 +59,17 @@ main {
   background-color: white;
   border: none;
 
-  
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
 }
 
 .pageBlock:hover {
-  background-color: #e0e0e0; /* Change background on hover */
+  background-color: rgb(234, 202, 143); /* Change background on hover */
 }
 
-.prevPage , .nextPage {
+.prevPage,
+.nextPage {
   width: 100px;
   height: 60px;
 
@@ -79,14 +79,20 @@ main {
   background-color: rgb(239, 224, 196);
   border: none;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.prevPage:hover,
+.nextPage:hover {
+  background-color: rgb(234, 202, 143);
 }
 
 .shop-breadcrumb {
- height: 100px;
- background-color: rgba(144, 164, 174, 0.8);
- display: flex;
- align-items: center;
- padding-left: 100px;
+  height: 100px;
+  background-color: rgba(111, 155, 176);
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
 }
 
 .shop-breadcrumb div {

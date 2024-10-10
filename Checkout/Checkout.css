@@ -1,0 +1,33 @@
+.banner {
+  width: 100%; /* Lățimea containerului */
+  aspect-ratio: 4.5 / 1; /* Înălțimea containerului */
+  background-image: url('/Assets/dall2.jpg'); 
+  background-size: cover; /* Face ca imaginea să acopere complet containerul */
+  background-position: top; /* Centrează imaginea */
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner h2 {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 72px;
+  color: rgb(239, 224, 196);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.banner p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  color: rgb(239, 224, 196);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.banner p span {
+  font-weight: 500;
+}

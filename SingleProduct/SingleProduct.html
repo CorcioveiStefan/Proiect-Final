@@ -5,17 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="/GlobalCSS/Global.css">
+
   <link rel="stylesheet" href="/GlobalCSS/TopNav.css">
-  <link rel="stylesheet" href="/GlobalCSS/Footer.css">
+  <link rel="stylesheet" href="/GlobalCSS/TopNavMQ.css">
+
   <link rel="stylesheet" href="/GlobalCSS/Cart.css">
+  <link rel="stylesheet" href="/GlobalCSS/CartMQ.css">
+
+  <link rel="stylesheet" href="/GlobalCSS/Footer.css">
+  <link rel="stylesheet" href="/GlobalCSS/FooterMQ.css">
+  
   <link rel="stylesheet" href="SingleProduct.css">
+  <link rel="stylesheet" href="SingleProductMQ.css">
+  
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <nav>
       <div class = "logo">
-        <a href="/Home/Home.html"><img src="/Assets/check-this-out.png" alt="logo" width="120px" height="80px"></a>
+        <a href="/Home/Home.html"><img src="/Assets/check-this-out.png" alt="logo" width="117px" height="78px"></a>
       </div>
       <div class = "pages">
         <a href="/Home/Home.html">Home</a>
@@ -25,7 +34,9 @@
         <a href="" id="cartButton"><img src="/Assets/Cart.png" alt="Cart" width="25px"></a>
       </div>
     </nav>
-    <div class="Product-breadcrumb"></div>
+    <div class="Product-breadcrumb">
+      
+    </div>
   </header>
   <main class="produs"></main>
   <footer>
@@ -57,14 +68,16 @@
         </div>
       </div>
     </div> 
-    <div class="copyright"><p>2023 furino. All rights reverved</p></div> 
+    <div class="copyright"><p>2024 CheckThisOutStore. All rights reverved</p></div> 
 </footer>
 
 
 <div id="cartDiv">
   <h3>Shopping Cart</h3>
   <div class="cosProduse"></div>
-</div> 
+  <div class="pretCart"></div>
+  <div class="optiuniCos"></div>
+</div>  
 <div class="cartOverlay" id="overlay"></div>
 
 <script src="/GlobalJS/Cart.js"></script>

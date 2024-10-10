@@ -9,6 +9,18 @@ header nav {
 
 header nav .logo {
   margin-left: 54px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+header nav .logo img {
+  transition: all 0.15s ease-in-out;
+}
+
+header nav .logo img:hover {
+  width: 120px;
+  height: 80px;
 }
 
 header nav .pages a {
@@ -18,9 +30,26 @@ header nav .pages a {
  font-weight: 500;
  line-height: 24px;
  color: #000000;
+ transition: text-shadow 0.15s ease-in-out;
+}
 
+header nav .pages a:hover  {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  font-size: 20px;
+  margin-right: 65px;
 }
 
 header nav .cart {
   margin-right: 100px;
+  width: 28px;
+  display: flex;
+  justify-content: center;
+}
+
+header nav .cart img {
+  transition: width 0.15s ease-in-out;
+}
+
+header nav .cart img:hover {
+  width: 27px;
 }

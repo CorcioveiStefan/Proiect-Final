@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent gray background */
+  background-color: rgba(217, 217, 217, 0.8); /* Semi-transparent gray background */
   display: none; /* Initially hidden */
   z-index: 10; /* Ensure it appears above other content */
 }
@@ -15,7 +15,7 @@
   position: fixed;
   top: 0px;
   right: 0px;
-  width: 400px;
+  width: 417px;
   background-color: #f5f5f5;
   border: 1px solid #ccc;
   padding: 15px;
@@ -26,7 +26,6 @@
 
 #cartDiv h3 {
   padding-bottom: 24px;
-  border-bottom: 1px solid #D9D9D9;
 }
 
 .cosProduse {
@@ -35,7 +34,9 @@
   justify-content: flex-start; /* Align items to the top */
   overflow-y: auto; /* Allow scrolling if content overflows */
   height: 60vh;
-  padding: 10px; /* Optional: add some padding to prevent content from being cut off at the edges */
+  padding: 10px 10px 10px 0px; /* Optional: add some padding to prevent content from being cut off at the edges */
+  max-width: 350px;
+  border-top: 1px solid #D9D9D9;
 }
 
 .cosProduse img {
@@ -44,21 +45,32 @@
   border-radius: 10px;
 }
 
-.cosProduse .butonAchizitie {
-  width: 135px;
+#cartDiv .optiuniCos {
+  display: flex;
+  justify-content: space-around;
+}
+
+#cartDiv .optiuniCos button {
+  display: inline-block;
+  width: 100px;
   height: 30px;
-  padding: 6px 30px 6px 30px;
-  border-radius: 50px 0px 0px 0px;
-  border: 1px 0px 0px 0px;
+  padding: 6px 15px 6px 15px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  border-radius: 50px;
+  border: 1px solid black;
+}
+
+#cartDiv .optiuniCos > div { 
+  padding-top: 25px;
 }
 
 .cosProduse .unProdusCos {
-  background-color: rgb(255, 255, 255); 
-  border: 2px solid #ffffff; 
+  background-color: #f5f5f5; 
   border-radius: 6px; 
-  box-shadow: 0 3px 6px rgba(3, 3, 3, 0.3); 
-  padding: 9px;
-  margin: 9px;
+  padding: 9px 0px;
+  margin: 9px 0px;
 
   display: flex;
   flex-direction: column;
@@ -69,6 +81,10 @@
 .totalDiv {
   padding: 21px 0;
   border-bottom: 1px solid #D9D9D9;
+}
+
+.delimitareCart {
+  height: 20px;;
 }
 
 .controale-produse {
@@ -97,7 +113,7 @@
 
 .top-div {
   display: flex;
-  justify-content: space-around;
+  gap: 35px;
   width: 100%;
 }
 

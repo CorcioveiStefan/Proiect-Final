@@ -33,7 +33,7 @@
   font-size: 52px;
   font-weight: 700;
   line-height: 65px;  
-  color: #90a4ae;
+  color: rgb(111, 155, 176);
   padding-bottom: 17px;
   user-select: none;
 }
@@ -49,11 +49,19 @@
 
 .banner .banner-overlay button {
   width: 220px;
-  height: 74px;
-  padding: 25px 72px;
-  background-color: #90a4ae ;
+  height: 72px;
+  padding: auto auto;
+  background-color: 	rgb(111, 155, 176) ;
   border: none;
   color:  #f5f5f5;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.banner .banner-overlay button:hover {
+  background-color: rgba(245, 245, 245, 0.7);
+  color: rgb(111, 155, 176);
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.2);
 }
 
 main {
@@ -81,13 +89,20 @@ main .buttonMain {
 .buttonMain button {
   width: 245px;
   height: 48px;
-  border: 1px solid rgb(144, 164, 174);
-  color: rgb(144, 164, 174);
+  border: 1px solid rgb(111, 155, 176);
+  color:rgb(111, 155, 176);
   background-color: white;
-
+  cursor: pointer;
   
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
+  transition: all 0.15s ease-in-out;
+}
+
+.buttonMain button:hover {
+  background-color: rgb(111, 155, 176);
+  color: #f5f5f5;
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.2);
 }
 

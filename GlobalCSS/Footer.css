@@ -33,7 +33,7 @@ footer .subscribe input {
   border: none;
   background-color: #f5f5f5;
   width: 180px;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
 }
 
 footer .subscribe button {
@@ -42,14 +42,25 @@ footer .subscribe button {
   line-height: 21px;
   border: none;
   background-color: #f5f5f5;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
 }
 
 footer .footerLinkInfo {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto the next row */
+  justify-content: space-between;
   width: 100%;
   border-bottom: 1px solid #9F9F9F;
+}
+
+footer .footerLinkInfo .adresa {
+  flex:1 1  25% ;
+}
+footer .footerLinkInfo .linkuri {
+  flex: 1 1 50%;
+}
+footer .footerLinkInfo .subscribe {
+  flex: 1 1 25%;
 }
 
 .footerLinkInfo .linkuri {

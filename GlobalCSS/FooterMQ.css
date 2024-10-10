@@ -1,0 +1,34 @@
+@media screen and (max-width: 1000px) {
+  footer .footerLinkInfo .adresa {
+    flex:1 1  50% ;
+    order: 1;
+  }
+  footer .footerLinkInfo .linkuri {
+    flex: 1 1 100%;
+    order: 3;
+    justify-content: flex-start;
+    gap: 50px;
+  }
+  footer .footerLinkInfo .subscribe {
+    flex: 1 1 50%;
+    order: 2;
+  }
+  footer .footerLinkInfo {
+    gap: 70px;
+  }
+  .footerLinkInfo .linkuri ul li:first-child{
+    padding-bottom: 30px;
+  }
+  .footerLinkInfo .linkuri ul li {
+    padding-bottom: 25px;
+  }
+  footer .subscribe h5 {
+    padding-bottom: 30px ;
+  }
+  footer .adresa h5 {
+    padding-bottom: 30px;
+  }
+}
+
+
+

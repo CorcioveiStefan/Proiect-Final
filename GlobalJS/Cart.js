@@ -1,20 +1,18 @@
-// Get the cart button, cartDiv, and overlay elements
-const cartButton = document.getElementById('cartButton');
-const cartDiv = document.getElementById('cartDiv');
-const cartOverlay = document.getElementById('overlay');
+// Obține elementele pentru butonul de cart, cartDiv și overlay
+const cartButton = document.getElementById('cartButton'); // Butonul pentru cart
+const cartDiv = document.getElementById('cartDiv'); // Div-ul care conține produsele din cart
+const cartOverlay = document.getElementById('overlay'); // Overlay-ul care acoperă restul paginii
 
-// Function to show the cart and overlay
+// Funcție pentru a arăta cart-ul și overlay-ul
 cartButton.addEventListener('click', (e) => {
-  e.preventDefault(); // Prevent the default link behavior
-  cartDiv.style.display = 'block'; // Show the cartDiv
-  cartOverlay.style.display = 'block'; // Show the overlay
+  e.preventDefault(); // Previne comportamentul implicit al link-ului
+  cartDiv.style.display = 'block'; // Afișează cart-ul
+  cartOverlay.style.display = 'block'; // Afișează overlay-ul
 });
 
-// Function to hide the cart and overlay when the overlay is clicked
+// Funcție pentru a ascunde cart-ul și overlay-ul când overlay-ul este clicat
 cartOverlay.addEventListener('click', () => {
-  cartDiv.style.display = 'none'; // Hide the cartDiv
-  cartOverlay.style.display = 'none'; // Hide the overlay
+  cartDiv.style.display = 'none'; // Ascunde cart-ul
+  cartOverlay.style.display = 'none'; // Ascunde overlay-ul
 });
-
-
 

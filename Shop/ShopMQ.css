@@ -1,0 +1,11 @@
+@media screen and (max-width: 910px) {
+  .banner {
+    height: 198px;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .shop-breadcrumb {
+    height: 66px;
+  }
+}

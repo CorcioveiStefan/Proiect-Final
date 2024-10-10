@@ -1,0 +1,39 @@
+@media screen and (max-width: 1100px) {
+  .banner .banner-overlay p {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .banner .banner-overlay h2 {
+    font-size: 39px;
+    font-weight: 700;
+    line-height: 48px;  
+  }
+
+  .banner .banner-overlay button {
+    height: 40px ;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .banner {
+    height: 330px;
+  }
+  .banner .banner-overlay {
+    padding: 31px 28px 18px 20px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .banner .banner-overlay {
+    padding: 31px 28px 18px 20px;
+    right: 10%;
+    left: 10%;
+  }
+  .banner .banner-overlay h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;  
+  }
+}
