@@ -8,7 +8,7 @@ header nav {
 }
 
 header nav .logo {
-  margin-left: 54px;
+  margin-left: 40px;
   width: 120px;
   display: flex;
   justify-content: center;
@@ -47,9 +47,11 @@ header nav .cart {
 }
 
 header nav .cart img {
-  transition: width 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
 }
 
 header nav .cart img:hover {
   width: 27px;
+  box-shadow:2px 2px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
 }
