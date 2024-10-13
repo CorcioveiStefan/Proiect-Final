@@ -1,0 +1,48 @@
+@media screen and (max-width: 1100px) {
+  .checkout-container .left-section {
+    padding: 0 60px 0 0;
+  }
+  .checkout-container .right-section {
+    padding: 87px 0px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .checkout-container {
+    padding: 63px 57px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .banner {
+    height: 198px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .checkout-container {
+    flex-direction: column;
+  }
+  .checkout-container .left-section {
+    padding: 0;
+  }
+  .checkout-container .right-section {
+    padding: 50px 0 0 0;
+  }
+  .checkout-container .left-section form input {
+    height: 60px;
+  }
+  .checkout-container .left-section form .complete-name div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .checkout-container .left-section form .complete-name {
+    flex-direction: column;
+  }
+  .checkout-container {
+    padding: 63px 42px;
+  }
+}

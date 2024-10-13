@@ -43,10 +43,31 @@
 }
 
 .product-details .pret {
-font-size: 24px;
-font-weight: 500;
-line-height: 36px;
-color: rgb(144, 164, 174);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  color: rgb(144, 164, 174);
+}
+
+.product-details .rate {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 0;
+}
+
+.product-details .rate div {
+  height: 30px;
+  border-left: 1px solid #9f9f9f;
+  padding-left: 22px;
+
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 19.5px;
+  color: #9f9f9f;
+
+  display: flex;
+  align-items: center;
 }
 
 .product-details .description {
@@ -63,30 +84,118 @@ color: rgb(144, 164, 174);
   padding-left: 54px;
   display: flex;
   align-items: center;
- }
+}
 
- .Product-breadcrumb p {
-    width: 200px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    padding-left: 16px;
- }
+.Product-breadcrumb p {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  padding-left: 16px;
+}
 
- .Product-breadcrumb span {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: rgb(239, 224, 196);
-    padding-right: 14px;
-    padding-left: 14px;
+.Product-breadcrumb span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgb(239, 224, 196);
+  padding-right: 14px;
+  padding-left: 14px;
 }
 
 .Product-breadcrumb div {
   border-right: 2px solid rgb(239, 224, 196);
   height: 24px;
   width: 16px;
+}
+
+.size-color {
+  padding-top: 21px;
+}
+
+.size-color h4 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: rgb(144, 164, 174);
+  padding-bottom: 12px;
+}
+
+.size-color h5 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: rgb(144, 164, 174);
+  padding-bottom: 12px;
+}
+
+.butoane-size,
+.butoane-color {
+  padding-bottom: 18px;
+  display: flex;
+  gap: 16px;
+}
+
+.size-color .butoane-size button {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fde8cf;
+}
+
+.size-color .butoane-size button:first-child {
+  background-color: #b88e2f;
+}
+
+.size-color .butoane-color button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+}
+
+.size-color .butoane-color button:nth-child(1) {
+  background-color: rgba(111, 155, 176);
+}
+.size-color .butoane-color button:nth-child(2) {
+  background-color: black;
+}
+.size-color .butoane-color button:nth-child(3) {
+  background-color: #b88e2f;
+}
+
+.controale {
+  display: flex;
+  gap: 18px;
+}
+
+.controale .butoane-cantitate button {
+  border: none;
+  background-color: #f5f5f5;
+  width: 30px;
+  height: 62px;
+  cursor: pointer;
+}
+
+.controale .butoane-cantitate {
+  width: 123px;
+  height: 64px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #9f9f9f;
+  border-radius: 10px;
+}
+
+.controale .buttonAddSP {
+  width: 215px;
+  height: 64px;
+  border-radius: 15px;
+  border: 1px solid black;
+  background-color: #f5f5f5;
+  cursor: pointer;
 }

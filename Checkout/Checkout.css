@@ -1,9 +1,9 @@
 .banner {
-  width: 100%; /* Lățimea containerului */
-  aspect-ratio: 4.5 / 1; /* Înălțimea containerului */
-  background-image: url('/Assets/dall2.jpg'); 
-  background-size: cover; /* Face ca imaginea să acopere complet containerul */
-  background-position: top; /* Centrează imaginea */
+  width: 100%;
+  aspect-ratio: 4.5 / 1;
+  background-image: url("/Assets/dall2.jpg");
+  background-size: cover;
+  background-position: top;
   background-repeat: no-repeat;
 
   display: flex;
@@ -30,4 +30,171 @@
 
 .banner p span {
   font-weight: 500;
+}
+
+main {
+  background-color: #f5f5f5;
+}
+
+main .left-section h2 {
+  padding: 35px 0;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 54px;
+}
+
+.checkout-container {
+  display: flex;
+  padding: 63px 100px;
+}
+
+.checkout-container .left-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-container .left-section {
+  padding: 0 75px;
+}
+.checkout-container .right-section {
+  padding: 87px 38px;
+}
+
+.checkout-container .right-section p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  margin-bottom: 39px;
+}
+.checkout-container .right-section p span {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.checkout-container .right-section .butonCheckout {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.checkout-container .right-section .butonCheckout button {
+  width: 318px;
+  height: 64px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+
+.checkout-container .left-section form label {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.checkout-container .left-section form input {
+  margin-bottom: 36px;
+  margin-top: 22px;
+  height: 75px;
+  border: 1px solid #9f9f9f;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+.checkout-container .left-section form .complete-name {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.checkout-container .left-section,
+.checkout-container .right-section {
+  flex: 1 1 50%;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 23px 0 60px 0;
+}
+
+.round-toggle-button {
+  width: 14px;
+  height: 14px;
+  background-color: black;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.round-toggle-button.on {
+  background-color: #4caf50;
+}
+
+.cart-checkout {
+  display: flex;
+  justify-content: space-between;
+  gap: 21px;
+}
+
+.cart-checkout .product-item .product-title {
+  max-width: 135px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #9f9f9f;
+}
+
+.cart-checkout .product-item .product-count {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.product-item,
+.subtotal-item {
+  display: flex;
+  padding-bottom: 22px;
+}
+
+.subtotal-item {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-checkout h3 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  padding-bottom: 14px;
+}
+
+.cart-checkout .total,
+.cart-checkout .subtotal-calculated {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.prodlist-sub,
+.total,
+.subtotal-calculated {
+  padding-bottom: 22px;
+}
+
+.prodlist-tot,
+.subtotal-calculated {
+  padding-bottom: 39px;
 }

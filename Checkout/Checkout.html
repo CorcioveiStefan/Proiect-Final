@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout</title>
   <link rel="stylesheet" href="/GlobalCSS/Global.css">
-  
+
   <link rel="stylesheet" href="/GlobalCSS/TopNav.css">
   <link rel="stylesheet" href="/GlobalCSS/TopNavMQ.css">
 
@@ -16,47 +17,119 @@
   <link rel="stylesheet" href="/GlobalCSS/FooterMQ.css">
 
   <link rel="stylesheet" href="Checkout.css">
+  <link rel="stylesheet" href="CheckoutMQ.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <nav>
-      <div class = "logo">
+      <div class="logo">
         <a href="/Home/Home.html"><img src="/Assets/check-this-out.png" alt="logo" width="117px" height="78px"></a>
       </div>
-      <div class = "pages">
+      <div class="pages">
         <a href="/Home/Home.html">Home</a>
         <a href="/Shop/Shop.html">Shop</a>
       </div>
-      <div class="cart">
-        <a href="" id="cartButton"><img src="/Assets/Cart.png" alt="Cart" width="25px"></a>
+      <div class="nav-right">
+        <div class="cart">
+          <a href="" id="cartButton"><img src="/Assets/Cart.png" alt="Cart" width="25px" height="22px"></a>
+        </div>
+        <div class="login-icon" id="login-icon"> <img src="/Assets/loginOFFHEAD.png" alt="" width="22px"></div>
+      </div>
+
+      <div id="page-overlay" style="display: none;"></div>
+      <div class="login modal" style="display: none;">
+        <div class="modal__content">
+          <div class="modal__header">Wellcome</div>
+          <label for="user">User</label>
+          <input type="text" id="user" placeholder="UserID">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="*******">
+          <button id="submit-login">Login</button>
+          <button id="logout-button" style="display: none;">Logout</button>
+        </div>
       </div>
     </nav>
-    <div class = "banner">
+    <div class="banner">
       <div class="banner-overlay">
         <h2>Checkout</h2>
         <p><span>Home</span> > Checkout</p>
       </div>
     </div>
   </header>
+  <main>
+    <div class="checkout-container">
+      <div class="left-section">
+        <h2>Billing Details</h2>
+        <form>
+          <div class="complete-name">
+            <div>
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div>
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required>
+            </div>
+          </div>
+          <label for="street">Street address</label>
+          <input type="text" id="street" name="street" required>
+
+          <label for="townCity">Town/City</label>
+          <input type="text" id="townCity" name="townCity" required>
+        </form>
+      </div>
+      <div class="right-section">
+        <div class="cart-checkout">
+          <div class="product-section">
+            <h3>Product</h3>
+            <div class="product-list">
+            </div>
+            <div class="prodlist-sub">Subtotal</div>
+            <div class="prodlist-tot">Total</div>
+          </div>
+          <div class="subtotal-section">
+            <h3>Subtotal</h3>
+            <div class="subtotal-list">
+            </div>
+            <div class="total"></div>
+            <div class="subtotal-calculated"></div>
+          </div>
+        </div>
+        <div class="toggle-container">
+          <button id="toggleButton" class="round-toggle-button"></button>
+          <label for="toggleButton" class="toggle-label">Cash On Delivery</label>
+        </div>
+        <p>Your personal data will be used to support your experience throughout this website, to manage access to your
+          account, and for other purposes described in our <span>privacy policy</span>.</p>
+        <div class="butonCheckout">
+          <button>Place order</button>
+        </div>
+      </div>
+    </div>
+  </main>
   <footer>
-    
     <div class="footerLinkInfo">
       <div class="adresa">
         <h5>Check This Out Store</h5>
-        <p>400 University Drive Suite 200 Coral Gables, FL 33134 USA</p>
+        <p>117 Market Street, London, W1A 1AA, United Kingdom</p>
       </div>
       <div class="linkuri">
         <ul class="link">
-          <li><h5>Links</h5></li>
+          <li>
+            <h5>Links</h5>
+          </li>
           <li><a href="">Home</a></li>
           <li><a href="">Shop</a></li>
           <li><a href="">About</a></li>
           <li><a href="">Contact</a></li>
         </ul>
         <ul class="help">
-          <li><h5>Help</h5></li>
+          <li>
+            <h5>Help</h5>
+          </li>
           <li><a href="">Payment Options</a></li>
           <li><a href="">Returns</a></li>
           <li><a href="">Privacy Policies</a></li>
@@ -69,18 +142,23 @@
           <button type="submit">Subscribe</button>
         </div>
       </div>
-    </div> 
-    <div class="copyright"><p>2024 CheckThisOutStore. All rights reverved</p></div> 
-</footer>
+    </div>
+    <div class="copyright">
+      <p>2024 CheckThisOutStore. All rights reverved</p>
+    </div>
+  </footer>
   <div id="cartDiv">
     <h3>Shopping Cart</h3>
     <div class="cosProduse"></div>
     <div class="pretCart"></div>
     <div class="optiuniCos"></div>
-  </div>  
+  </div>
   <div class="cartOverlay" id="overlay"></div>
 
   <script src="/GlobalJS/Cart.js"></script>
   <script src="/GlobalJS/PrintareProduse.js"></script>
+  <script src="Checkout.js"></script>
+  <script src="/GlobalJS/Login.js"></script>
 </body>
+
 </html>

@@ -1,15 +1,13 @@
-const arrayCosProduseSalvat = JSON.parse(localStorage.getItem('cart')) || [];
+const arrayCosProduseSalvat = JSON.parse(localStorage.getItem("cart")) || [];
 const arrayCosProduse = arrayCosProduseSalvat;
 
-//=== functie ce printeaza un produs in lista produse ===//
 const printeazaUnProdus = function (produs) {
   const _listaProduse = document.querySelector(".listaProduse");
   const _unProdus = document.createElement("div");
-  _unProdus.classList.add('unProdus');
+  _unProdus.classList.add("unProdus");
   _listaProduse.appendChild(_unProdus);
 
-  _unProdus.innerHTML =
-    `<button class="buttonAdd">Add to Cart</button>
+  _unProdus.innerHTML = `<button class="buttonAdd">Add to Cart</button>
      <div class="unProdusImg">
        <img src="${produs.image}" alt="${produs.title}" />
      </div>
@@ -27,65 +25,60 @@ const printeazaUnProdus = function (produs) {
      <div class="ProdusOverlay"></div>
      `;
 
-  const butonAdaugare = _unProdus.querySelector('button');
-  butonAdaugare.addEventListener('click', function () {
+  const butonAdaugare = _unProdus.querySelector("button");
+  butonAdaugare.addEventListener("click", function () {
     adaugaInCos(produs);
   });
 
-  // Select the image and button from the newly created _unProdus
-  const image = _unProdus.querySelector('.unProdusImg');
-  const overlay = _unProdus.querySelector('.ProdusOverlay')
+  const image = _unProdus.querySelector(".unProdusImg");
+  const overlay = _unProdus.querySelector(".ProdusOverlay");
 
-  // Add mouseover event listener to show the button
-  image.addEventListener('mouseover', () => {
-    butonAdaugare.style.display = 'block'; // Show the button
-    overlay.style.display = 'block';
+  image.addEventListener("mouseover", () => {
+    butonAdaugare.style.display = "block";
+    overlay.style.display = "block";
   });
 
-  // Add mouseout event listener to hide the button
-  image.addEventListener('mouseout', () => {
-    butonAdaugare.style.display = 'none'; // Hide the button
-    overlay.style.display = 'none';
+  image.addEventListener("mouseout", () => {
+    butonAdaugare.style.display = "none";
+    overlay.style.display = "none";
   });
 
-  const unProdusInfo = _unProdus.querySelector('.unProdusInfo');
-  unProdusInfo.addEventListener('click', () => {
-    localStorage.setItem('selectedProduct', JSON.stringify(produs));
-    window.location.href = '../SingleProduct/SingleProduct.html';
+  const unProdusInfo = _unProdus.querySelector(".unProdusInfo");
+  unProdusInfo.addEventListener("click", () => {
+    localStorage.setItem("selectedProduct", JSON.stringify(produs));
+    window.location.href = "../SingleProduct/SingleProduct.html";
   });
 };
 
-// === Function to display all products (or a subset for pagination) ===
 const printeazaToateProdusele = (produseStoc) => {
   const _listaProduse = document.querySelector(".listaProduse");
   produseStoc.forEach((produs) => printeazaUnProdus(produs));
 };
 
 function adaugaInCos(produs) {
-  const cosDinLocalStorage = JSON.parse(localStorage.getItem('cart')) || [];
-  const index = cosDinLocalStorage.findIndex(item => item.id === produs.id);
+  const cosDinLocalStorage = JSON.parse(localStorage.getItem("cart")) || [];
+  const index = cosDinLocalStorage.findIndex((item) => item.id === produs.id);
 
   if (index > -1) {
-    // Product already exists in the cart, increment the count
-    cosDinLocalStorage[index].count = (cosDinLocalStorage[index].count || 1) + 1;
+    cosDinLocalStorage[index].count =
+      (cosDinLocalStorage[index].count || 1) + 1;
   } else {
-    // New product, set count to 1
     produs.count = 1;
     cosDinLocalStorage.push(produs);
   }
 
-  localStorage.setItem('cart', JSON.stringify(cosDinLocalStorage));
+  localStorage.setItem("cart", JSON.stringify(cosDinLocalStorage));
   produseInCos(cosDinLocalStorage);
+  updateCartDisplay();
 }
 
 function produsInCos(produsPrintat) {
   const _cosProduse = document.querySelector(".cosProduse");
   const _unProdusCos = document.createElement("div");
-  _unProdusCos.classList.add('unProdusCos');
+  _unProdusCos.classList.add("unProdusCos");
   _cosProduse.appendChild(_unProdusCos);
 
-  _unProdusCos.innerHTML =
-    `<div class="top-div">
+  _unProdusCos.innerHTML = `<div class="top-div">
   <div>
     <img src="${produsPrintat.image}" />
   </div>
@@ -101,54 +94,60 @@ function produsInCos(produsPrintat) {
   </div>
   <button class="stergeProdus">Delete</button>`;
 
-  const _buttonMinus = _unProdusCos.querySelector('.buttonMinus');
-  const _buttonPlus = _unProdusCos.querySelector('.buttonPlus');
-  const _buttonSterge = _unProdusCos.querySelector('.stergeProdus');
+  const _buttonMinus = _unProdusCos.querySelector(".buttonMinus");
+  const _buttonPlus = _unProdusCos.querySelector(".buttonPlus");
+  const _buttonSterge = _unProdusCos.querySelector(".stergeProdus");
 
-  _buttonSterge.addEventListener('click', function () {
-    const cosDinLocalStorage = JSON.parse(localStorage.getItem('cart')) || [];
-    const cosActualizat = cosDinLocalStorage.filter(item => item.id !== produsPrintat.id);
+  _buttonSterge.addEventListener("click", function () {
+    const cosDinLocalStorage = JSON.parse(localStorage.getItem("cart")) || [];
+    const cosActualizat = cosDinLocalStorage.filter(
+      (item) => item.id !== produsPrintat.id
+    );
 
-    localStorage.setItem('cart', JSON.stringify(cosActualizat));
+    localStorage.setItem("cart", JSON.stringify(cosActualizat));
     produseInCos(cosActualizat);
+    updateCartDisplay();
   });
 
-  _buttonMinus.addEventListener('click', function () {
+  _buttonMinus.addEventListener("click", function () {
     if (produsPrintat.count === 1) {
-      _buttonMinus.style.backgroundColor = 'rgb(207, 207, 207)';
+      _buttonMinus.style.backgroundColor = "black";
     } else if (produsPrintat.count > 1) {
       eliminareCantitateProdus(produsPrintat);
     }
   });
 
-  _buttonPlus.addEventListener('click', function () {
-    adaugareCantitateProdus(produsPrintat);
+  _buttonPlus.addEventListener("click", function () {
+    if (produsPrintat.count < 20) {
+      adaugareCantitateProdus(produsPrintat);
+    } else if ((produsPrintat.count = 20)) {
+      _buttonPlus.style.backgroundColor = "black";
+      _buttonPlus.disabled = true;
+    }
   });
 }
 
 function eliminareCantitateProdus(produs) {
-  const cosDinLocalStorage = JSON.parse(localStorage.getItem('cart'));
-  cosDinLocalStorage.forEach(item => {
+  const cosDinLocalStorage = JSON.parse(localStorage.getItem("cart"));
+  cosDinLocalStorage.forEach((item) => {
     if (item.id === produs.id) {
-      // Only decrement if count is greater than 1
       if (item.count > 1) {
         item.count--;
       }
     }
   });
-  localStorage.setItem('cart', JSON.stringify(cosDinLocalStorage));
+  localStorage.setItem("cart", JSON.stringify(cosDinLocalStorage));
   produseInCos(cosDinLocalStorage);
 }
 
 function adaugareCantitateProdus(produs) {
-  const cosDinLocalStorage = JSON.parse(localStorage.getItem('cart')) || [];
-  cosDinLocalStorage.forEach(item => {
+  const cosDinLocalStorage = JSON.parse(localStorage.getItem("cart")) || [];
+  cosDinLocalStorage.forEach((item) => {
     if (item.id === produs.id) {
-      // Increment the count
       item.count++;
     }
   });
-  localStorage.setItem('cart', JSON.stringify(cosDinLocalStorage));
+  localStorage.setItem("cart", JSON.stringify(cosDinLocalStorage));
   produseInCos(cosDinLocalStorage);
 }
 
@@ -181,42 +180,65 @@ function produseInCos(produsePrintate) {
   _butonInchidere.innerHTML = `<button>Close</button>`;
   _butonComparatie.innerHTML = `<button>Comparison</button>`;
 
-  // Attach the event listener immediately after creating the button
   const closeButton = _butonInchidere.querySelector("button");
   closeButton.addEventListener("click", () => {
-    const cartDiv = document.getElementById('cartDiv'); // Assuming this is your cart div
-    const cartOverlay = document.getElementById('overlay'); // Assuming this is your overlay
-    cartDiv.style.display = 'none'; // Hide the cartDiv
-    cartOverlay.style.display = 'none'; // Hide the overlay
+    const cartDiv = document.getElementById("cartDiv");
+    const cartOverlay = document.getElementById("overlay");
+    cartDiv.style.display = "none";
+    cartOverlay.style.display = "none";
   });
 
-  _butonAchizitie.addEventListener("click", trimiteComanda);
+  _butonAchizitie.addEventListener("click", checkoutPage);
 
   _optiuniCos.appendChild(_butonAchizitie);
   _optiuniCos.appendChild(_butonComparatie);
   _optiuniCos.appendChild(_butonInchidere);
+
+  localStorage.setItem("checkoutProduct", JSON.stringify(produsePrintate));
 }
 
 function pretFinal(cumparaturi) {
-  // Calculate the total price using the current count of each product
   return cumparaturi.reduce((suma, produsCurent) => {
-    const count = produsCurent.count || 1; // Ensure count defaults to 1 if undefined
-    return suma + (produsCurent.price * count);
+    const count = produsCurent.count || 1;
+    return suma + produsCurent.price * count;
   }, 0);
 }
 
-function trimiteComanda() {
-  console.log("TrimiteComanda a fost apasat!");
-
-  localStorage.removeItem('cart');
-  arrayCosProduse.length = 0;
-  produseInCos(arrayCosProduse);
-
-  setTimeout(() => {
-    alert('Comanda a fost trimisă cu succes!');
-  }, 2000);
+function checkoutPage() {
+  window.location.href = "../Checkout/Checkout.html";
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function updateCartDisplay() {
+  const cartButton = document.getElementById("cartButton");
+  let cartItemCount = document.getElementById("cartItemCount");
+
+  if (!cartItemCount) {
+    cartItemCount = document.createElement("span");
+    cartItemCount.id = "cartItemCount";
+    cartItemCount.style.position = "absolute";
+    cartItemCount.style.top = "-9px";
+    cartItemCount.style.right = "-9px";
+    cartItemCount.style.backgroundColor = "red";
+    cartItemCount.style.color = "white";
+    cartItemCount.style.borderRadius = "50%";
+    cartItemCount.style.fontSize = "12px";
+
+    cartItemCount.style.alignSelf = "center";
+    cartItemCount.style.padding = "0 6px";
+    cartButton.appendChild(cartItemCount);
+  }
+
+  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (cartItems.length > 0) {
+    cartItemCount.textContent = cartItems.length;
+    cartItemCount.style.display = "inline";
+  } else {
+    cartItemCount.style.display = "none";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
   produseInCos(arrayCosProduse);
+  updateCartDisplay();
 });

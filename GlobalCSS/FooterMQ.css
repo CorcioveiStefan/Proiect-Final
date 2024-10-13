@@ -1,6 +1,6 @@
 @media screen and (max-width: 1000px) {
   footer .footerLinkInfo .adresa {
-    flex:1 1  50% ;
+    flex: 1 1 50%;
     order: 1;
   }
   footer .footerLinkInfo .linkuri {
@@ -16,14 +16,14 @@
   footer .footerLinkInfo {
     gap: 70px;
   }
-  .footerLinkInfo .linkuri ul li:first-child{
+  .footerLinkInfo .linkuri ul li:first-child {
     padding-bottom: 30px;
   }
   .footerLinkInfo .linkuri ul li {
     padding-bottom: 25px;
   }
   footer .subscribe h5 {
-    padding-bottom: 30px ;
+    padding-bottom: 30px;
   }
   footer .adresa h5 {
     padding-bottom: 30px;
@@ -35,7 +35,3 @@
     padding: 20px 60px;
   }
 }
-
-
-
-
