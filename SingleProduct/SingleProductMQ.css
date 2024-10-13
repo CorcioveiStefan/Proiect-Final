@@ -61,4 +61,12 @@
     max-width: 225px;
     max-height: 300px;
   }
+  .product-details h2 {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 42px;
+  }
+  .produs {
+    padding: 30px 30px;
+}
 }

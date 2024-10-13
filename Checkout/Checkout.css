@@ -158,6 +158,8 @@ main .left-section h2 {
   font-size: 12px;
   font-weight: 500;
   line-height: 18px;
+  display: flex;
+  align-items: center;
 }
 
 .product-item,
