@@ -1,5 +1,16 @@
 @media screen and (max-width: 450px) {
   header nav .logo {
-    margin-left: 25px;
+    margin-left: 15px;
+  }
+  header nav .pages a {
+    margin-right: 42px;
+  }
+  header nav .cart, #login-icon, .nav-right .favorite-cart {
+    width: 30px;
+  }
+  header nav .pages a:hover {
+    font-size: 16px;
+    text-shadow: none;
+    margin-right: 42px;
   }
 }

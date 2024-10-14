@@ -19,7 +19,10 @@
   <link rel="stylesheet" href="SingleProduct.css">
   <link rel="stylesheet" href="SingleProductMQ.css">
 
+  <link rel="stylesheet" href="/GlobalCSS/Favorite.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -33,27 +36,47 @@
         <a href="/Shop/Shop.html">Shop</a>
       </div>
       <div class="nav-right">
-        <div class="cart">
-          <a href="" id="cartButton"><img src="/Assets/Cart.png" alt="Cart" width="25px" height="22px"></a>
-        </div>
-        <div class="login-icon" id="login-icon"> <img src="/Assets/loginOFFHEAD.png" alt="" width="22px"></div>
-      </div>
 
-      <div id="page-overlay" style="display: none;"></div>
-      <div class="login modal" style="display: none;">
-        <div class="modal__content">
-          <div class="modal__header">Wellcome</div>
-          <label for="user">User</label>
-          <input type="text" id="user" placeholder="UserID">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="*******">
-          <button id="submit-login">Login</button>
-          <button id="logout-button" style="display: none;">Logout</button>
+        <div class="favorite-cart"><a href="" id="favoriteButton"><i class="fa-regular fa-heart"></i></a>
+        </div>
+
+        <div id="favoriteDiv">
+          <h3>Favorite</h3>
+          <div class="cosFavorite"></div>
+          <div class="optiuniFavorite"></div>
+        </div>
+        <div class="favoriteOverlay" id="favoriteoverlay"></div>
+
+        <div class="cart"><a href="" id="cartButton"><img src="/Assets/Cart.png" alt="Cart" width="25px"
+              height="22px"></a>
+        </div>
+
+        <div id="cartDiv">
+          <h3>Shopping Cart</h3>
+          <div class="cosProduse"></div>
+          <div class="pretCart"></div>
+          <div class="optiuniCos"></div>
+        </div>
+        <div class="cartOverlay" id="overlay"></div>
+
+        <div class="login-icon" id="login-icon"> <img src="/Assets/loginOFFHEAD.png" alt="" width="22px">
+        </div>
+
+        <div id="page-overlay" style="display: none;"></div>
+        <div class="login modal" style="display: none;">
+          <div class="modal__content">
+            <div class="modal__header">Wellcome</div>
+            <label for="user">User</label>
+            <input type="text" id="user" placeholder="UserID">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="*******">
+            <button id="submit-login">Login</button>
+            <button id="logout-button" style="display: none;">Logout</button>
+          </div>
         </div>
       </div>
     </nav>
     <div class="Product-breadcrumb">
-
     </div>
   </header>
   <main class="produs"></main>
@@ -95,19 +118,12 @@
     </div>
   </footer>
 
-
-  <div id="cartDiv">
-    <h3>Shopping Cart</h3>
-    <div class="cosProduse"></div>
-    <div class="pretCart"></div>
-    <div class="optiuniCos"></div>
-  </div>
-  <div class="cartOverlay" id="overlay"></div>
-
-  <script src="/GlobalJS/Cart.js"></script>
-  <script src="/GlobalJS/PrintareProduse.js"></script>
-  <script src="SingleProduct.js"></script>
   <script src="/GlobalJS/Login.js"></script>
+  <script src="/GlobalJS/Cart.js"></script>
+  <script src="/GlobalJS/PrintareListaCart.js"></script>
+  <script src="SingleProduct.js"></script>
+  <script src="/GlobalJS/Favorite.js"></script>
+  <script src="/GlobalJS/PrintareListaFavorite.js"></script>
 
 </body>
 

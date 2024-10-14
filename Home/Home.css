@@ -60,7 +60,8 @@
 .banner .banner-overlay button:hover {
   background-color: rgba(245, 245, 245, 0.7);
   color: rgb(111, 155, 176);
-  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 main {
@@ -100,7 +101,24 @@ main .buttonMain {
 }
 
 .buttonMain button:hover {
-  background-color: rgb(111, 155, 176);
+  background-color: rgba(111, 155, 176, 0.7);
   color: #f5f5f5;
-  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.buttonMain button:active {
+  background-color: rgba(111, 155, 176, 1);
+}
+
+.stergeFavorit {
+  display: none;
+}
+.top-div-favorite .textFavorite {
+  justify-content: flex-start;
+  gap: 36px;
+}
+
+.cart-icon {
+  display: none;
 }

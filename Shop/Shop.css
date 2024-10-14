@@ -66,6 +66,10 @@ main {
 
 .pageBlock:hover {
   background-color: rgb(234, 202, 143);
+  box-shadow: 
+    0 0 20px rgba(0, 0, 0, 0.2),
+    0 0 40px rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .prevPage,
@@ -84,6 +88,16 @@ main {
 .prevPage:hover,
 .nextPage:hover {
   background-color: rgb(234, 202, 143);
+  box-shadow: 
+    0 0 20px rgba(0, 0, 0, 0.2),
+    0 0 40px rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.prevPage:active,
+.nextPage:active {
+  background-color:  rgb(238, 192, 108);
+  color: white;
 }
 
 .shop-breadcrumb {
@@ -100,4 +114,13 @@ main {
   font-weight: 400;
   line-height: 24px;
   padding-left: 30px;
+}
+
+.pageBlock.active {
+  background-color: rgb(239, 224, 196);
+  color: white;
+}
+
+.pageBlock.active:hover {
+  background-color: rgb(234, 202, 143);
 }

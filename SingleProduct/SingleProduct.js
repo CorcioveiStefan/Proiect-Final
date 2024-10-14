@@ -1,7 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", singleProductPrint);
+
+function singleProductPrint() {
   const productData = JSON.parse(localStorage.getItem("selectedProduct"));
 
   if (productData) {
+    let count = 1;
+    productData.count = count;
+
     const produsContainer = document.querySelector(".produs");
 
     produsContainer.innerHTML = `
@@ -23,51 +28,72 @@ document.addEventListener("DOMContentLoaded", () => {
               <img src="/Assets/Group 88.png" alt="Rate" height="20px">
               <div>5 Customer Review</div>
             </div>
-            <p class= "description">${productData.description}</p>
-            <div class = "size-color">
+            <p class="description">${productData.description}</p>
+            <div class="size-color">
               <h4>Size :</h4>
-              <div class = "butoane-size"><button>XL</button><button>L</button><button>XS</button></div>
+              <div class="butoane-size"><button>XL</button><button>L</button><button>XS</button></div>
               <h5>Color :</h5> 
-              <div class = "butoane-color"><button></button> <button></button> <button></button> </div>
+              <div class="butoane-color"><button></button> <button></button> <button></button> </div>
             </div>
-            <div class = "controale" > 
-              <div class = "butoane-cantitate">
+            <div class="controale"> 
+              <div class="butoane-cantitate">
                 <button class="buttonMinusSP">-</button>
-                <span class="productCount">1</span>
+                <span class="productCount">${count}</span>
                 <button class="buttonPlusSP">+</button>
               </div>
               <button class="buttonAddSP">Add to Cart</button>
             </div> 
           </div>
       `;
+
     const butonAdaugare = produsContainer.querySelector(".buttonAddSP");
     const productCountSpan = produsContainer.querySelector(".productCount");
     const buttonMinusSP = produsContainer.querySelector(".buttonMinusSP");
     const buttonPlusSP = produsContainer.querySelector(".buttonPlusSP");
 
-    let count = 1;
-
     buttonPlusSP.addEventListener("click", function () {
       count++;
       productCountSpan.innerText = count;
+      productData.count = count;
+      localStorage.setItem("selectedProduct", JSON.stringify(productData));
+      console.log(productData.count);
     });
 
     buttonMinusSP.addEventListener("click", function () {
       if (count > 1) {
         count--;
         productCountSpan.innerText = count;
+        productData.count = count;
+        localStorage.setItem("selectedProduct", JSON.stringify(productData));
+        console.log(productData.count);
       }
     });
 
     butonAdaugare.addEventListener("click", function () {
-      productData.count = count;
-      adaugaInCos(productData);
+      adaugaInCosSP(productData);
+      console.log(productData.count);
     });
   } else {
     console.error("No product data found");
   }
   updateBreadcrumb();
-});
+}
+
+function adaugaInCosSP(produs) {
+  const cosDinLocalStorage = JSON.parse(localStorage.getItem("cart")) || [];
+  const index = cosDinLocalStorage.findIndex((item) => item.id === produs.id);
+
+  if (index > -1) {
+    cosDinLocalStorage[index].count =
+      cosDinLocalStorage[index].count + produs.count;
+  } else {
+    cosDinLocalStorage.push(produs);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cosDinLocalStorage));
+  produseInCos(cosDinLocalStorage);
+  updateCartDisplay();
+}
 
 function updateBreadcrumb() {
   const productData = JSON.parse(localStorage.getItem("selectedProduct"));
@@ -82,69 +108,4 @@ function updateBreadcrumb() {
       ".Product-breadcrumb"
     ).innerHTML = `<div>Product not found</div>`;
   }
-}
-
-function adaugaInCos(produs) {
-  const cosDinLocalStorage = JSON.parse(localStorage.getItem("cart")) || [];
-  const index = cosDinLocalStorage.findIndex((item) => item.id === produs.id);
-
-  if (index > -1) {
-    cosDinLocalStorage[index].count += produs.count;
-  } else {
-    cosDinLocalStorage.push(produs);
-  }
-
-  localStorage.setItem("cart", JSON.stringify(cosDinLocalStorage));
-  produseInCos(cosDinLocalStorage);
-  updateCartDisplay();
-}
-
-function produsInCos(produsPrintat) {
-  const _cosProduse = document.querySelector(".cosProduse");
-  const _unProdusCos = document.createElement("div");
-  _unProdusCos.classList.add("unProdusCos");
-  _cosProduse.appendChild(_unProdusCos);
-
-  _unProdusCos.innerHTML = `<div class="top-div">
-  <div>
-    <img src="${produsPrintat.image}" />
-  </div>
-  <div>
-    <h4>${produsPrintat.title}</h4>
-    <div class="modificariInCos">
-      <button class="buttonMinus">-</button>
-      <span>${produsPrintat.count}</span>
-      <button class="buttonPlus">+</button>
-    </div>
-    <span>Price: $${produsPrintat.count * produsPrintat.price}</span> </br>
-  </div>
-  </div>
-  <button class="stergeProdus">Delete</button>`;
-
-  const _buttonMinus = _unProdusCos.querySelector(".buttonMinus");
-  const _buttonPlus = _unProdusCos.querySelector(".buttonPlus");
-  const _buttonSterge = _unProdusCos.querySelector(".stergeProdus");
-
-  _buttonSterge.addEventListener("click", function () {
-    const cosDinLocalStorage = JSON.parse(localStorage.getItem("cart")) || [];
-    const cosActualizat = cosDinLocalStorage.filter(
-      (item) => item.id !== produsPrintat.id
-    );
-
-    localStorage.setItem("cart", JSON.stringify(cosActualizat));
-    produseInCos(cosActualizat);
-    updateCartDisplay();
-  });
-
-  _buttonMinus.addEventListener("click", function () {
-    if (produsPrintat.count === 1) {
-      _buttonMinus.style.backgroundColor = "rgb(207, 207, 207)";
-    } else if (produsPrintat.count > 1) {
-      eliminareCantitateProdus(produsPrintat);
-    }
-  });
-
-  _buttonPlus.addEventListener("click", function () {
-    adaugareCantitateProdus(produsPrintat);
-  });
 }

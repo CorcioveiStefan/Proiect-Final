@@ -7,7 +7,7 @@ header nav {
 }
 
 header nav .logo {
-  margin-left: 40px;
+  margin-left: 54px;
   width: 120px;
   display: flex;
   justify-content: center;
@@ -58,8 +58,8 @@ header nav .cart img:hover {
 
 #login-icon {
   cursor: pointer;
-  width: 30px;
-  height: 28px;
+  width: 35px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -134,4 +134,20 @@ header nav .cart img:hover {
   margin-right: 90px;
   align-items: center;
   gap: 15px;
+}
+
+.nav-right .favorite-cart {
+  width: 35px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-right .favorite-cart i {
+  color: black; 
+  font-size: 25px;
+}
+
+.nav-right .favorite-cart i:hover {
+  font-size: 26px;
 }

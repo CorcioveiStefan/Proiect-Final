@@ -31,16 +31,25 @@
   flex-direction: column;
   justify-content: flex-start;
   overflow-y: auto;
-  height: 60vh;
+  height: 50vh;
   padding: 10px 10px 10px 0px;
   max-width: 350px;
   border-top: 1px solid #d9d9d9;
 }
 
-.cosProduse img {
+.cosProduse .imgCart {
   width: 105px;
   height: 105px;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.cosProduse .imgCart img {
+  max-width: 100px;
+  max-height: 100px;
 }
 
 #cartDiv .optiuniCos {
@@ -116,6 +125,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
   width: 150px;
+}
+
+.cosProduse .pretProdusCart {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #B88E2F;
 }
 
 .stergeProdus {
