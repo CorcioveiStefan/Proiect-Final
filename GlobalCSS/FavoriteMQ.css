@@ -1,5 +1,5 @@
 @media screen and (max-width: 450px) {
-  #cartDiv {
+  .nav-right #favoriteDiv {
     width: 350px;
   }
 }

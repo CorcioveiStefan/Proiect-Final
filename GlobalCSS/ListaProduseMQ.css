@@ -1,5 +1,5 @@
 @media screen and (max-width: 566px) {
-  .listaProduse {
+  main .listaProduse {
     padding: 50px 60px;
   }
 }

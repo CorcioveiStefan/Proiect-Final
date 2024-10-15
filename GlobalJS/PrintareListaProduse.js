@@ -67,8 +67,8 @@ function printeazaUnProdus(produs) {
     (favProd) => favProd.id === produs.id
   );
   favoriteIcon.innerHTML = isFavorite
-    ? '<i class="fa-solid fa-heart" style="color: red;"></i>'
-    : '<i class="fa-regular fa-heart"></i>';
+    ? '<i class="fa-solid fa-heart" style="color: red;  cursor:pointer;"></i>'
+    : '<i class="fa-regular fa-heart" style=" cursor:pointer;"></i>';
   _unProdus.querySelector(".fav-icon").appendChild(favoriteIcon);
 
   favoriteIcon.addEventListener("click", () => {
@@ -83,12 +83,12 @@ function printeazaUnProdus(produs) {
         (favProd) => favProd.id !== produs.id
       );
       localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-      favoriteIcon.innerHTML = '<i class="fa-regular fa-heart"></i>'; // Change to regular heart
+      favoriteIcon.innerHTML = '<i class="fa-regular fa-heart" style=" cursor:pointer;"></i>';
     } else {
       currentFavorites.push(produs);
       localStorage.setItem("favorites", JSON.stringify(currentFavorites));
       favoriteIcon.innerHTML =
-        '<i class="fa-solid fa-heart" style="color: red;"></i>'; // Change to solid heart
+        '<i class="fa-solid fa-heart" style="color: red; cursor:pointer;"></i>';
     }
     updateFavoriteDisplay();
   });
