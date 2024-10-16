@@ -47,15 +47,14 @@ function printeazaUnProdus(produs) {
   unProdusInfo.addEventListener("click", () => {
     localStorage.setItem("selectedProduct", JSON.stringify(produs));
 
-    window.location.href = url;
-
     const currentPageSingleProduct = window.location.pathname;
 
     if (currentPageSingleProduct.includes("index.html")) {
-      checkoutPage("SingleProduct/SingleProduct.html");
+      window.location.href = "SingleProduct/SingleProduct.html";
     } else {
-      checkoutPage("../SingleProduct/SingleProduct.html");
+      window.location.href = "../SingleProduct/SingleProduct.html";
     }
+    
   });
 
   const cartProducts = JSON.parse(localStorage.getItem("cart")) || [];
