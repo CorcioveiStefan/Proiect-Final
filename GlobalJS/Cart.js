@@ -50,7 +50,7 @@ function checkoutPage(url) {
 
 const currentPageCheckout = window.location.pathname;
 
-if (currentPageCheckout.includes("Home.html")) {
+if (currentPageCheckout.includes("index.html")) {
   checkoutPage("Checkout/Checkout.html");
 } else {
   checkoutPage("../Checkout/Checkout.html");
