@@ -39,7 +39,17 @@ function produsInCos(produsPrintat) {
     localStorage.setItem("cart", JSON.stringify(cosActualizat));
     produseInCos(cosActualizat);
     updateCartDisplay();
+
+    const currentPage = window.location.pathname;
+
+  // Execute different logic depending on the page
+  if (currentPage.includes("/Shop.html")) {
     loadCurrentPageProducts();
+  } else if (currentPage.includes("/Checkout.html")) {
+    const cartActualizatPtCheckout = JSON.parse(localStorage.getItem("cart"));
+    localStorage.setItem("checkoutProduct", JSON.stringify(cartActualizatPtCheckout));
+    updateCheckoutDisplay();
+  }
   });
 
   _buttonMinus.addEventListener("click", function () {

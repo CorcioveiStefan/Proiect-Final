@@ -39,6 +39,8 @@
 
 .unProdusInfo:hover {
   background-color: rgba(	111, 155, 176, 0.9);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .unProdusInfo h4 {

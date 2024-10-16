@@ -58,7 +58,6 @@
 }
 
 #cartDiv .optiuniCos button {
-  display: inline-block;
   width: 100px;
   height: 30px;
   padding: 6px 15px 6px 15px;
@@ -67,6 +66,13 @@
   line-height: 18px;
   border-radius: 50px;
   border: 1px solid black;
+  cursor: pointer;
+}
+
+#cartDiv .optiuniCos button:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
+  background-color:  #ead29b;
 }
 
 #cartDiv .optiuniCos > div {
@@ -83,6 +89,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.cosProduse .unProdusCos .stergeProdus:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
+  background-color:  #ead29b;
+  border: 1px solid black;
 }
 
 .totalDiv {
@@ -136,4 +149,8 @@
 
 .stergeProdus {
   align-self: flex-end;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 3px 6px;
+  cursor: pointer;
 }

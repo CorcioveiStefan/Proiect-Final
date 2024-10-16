@@ -97,7 +97,8 @@ main .left-section h2 {
 }
 
 .checkout-container .right-section .butonCheckout button:active {
-  color: white;
+  font-size: 21px;
+   background-color: #8be6c5;
 }
 
 .checkout-container .left-section form label {

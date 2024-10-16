@@ -73,4 +73,7 @@ function logout() {
   _pageOverlay.style.display = "none";
   _loginModal.style.display = "none";
   _loginIconImg.src = "/Assets/loginOFFHEAD.png";
+
+  _userInput.value = "";
+  _passwordInput.value = "";
 }

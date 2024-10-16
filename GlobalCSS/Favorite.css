@@ -80,6 +80,12 @@
   border: 1px solid black;
 }
 
+#favoriteDiv .optiuniFavorite button:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
+  background-color:  #ead29b;
+}
+
 .top-div-favorite {
   display: flex;
   gap: 35px;
@@ -112,4 +118,16 @@
   height: 25px;
   font-size: 12px;
   line-height: 14px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.textFavorite button:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
+  background-color:  #ead29b;
+}
+
+.textFavorite button:active {
+  background-color:  #ffe4ab;
 }
