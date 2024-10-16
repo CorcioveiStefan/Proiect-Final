@@ -10,6 +10,8 @@ const _loginIconImg = document.querySelector("#login-icon img");
 var userKeyGlobal;
 
 document.addEventListener("DOMContentLoaded", () => {
+  updateLoginIcon();
+
   if (localStorage.getItem("isLoggedIn") === "true") {
     enableInteractions();
   }
@@ -58,17 +60,28 @@ async function fetchLogin() {
   }
 }
 
+function updateLoginIcon() {
+  if (localStorage.getItem("isLoggedIn") === "true") {
+    if (window.location.pathname.includes("index.html")) {
+      _loginIconImg.src = "Assets/loginONHEAD.png";
+    } else {
+      _loginIconImg.src = "../Assets/loginONHEAD.png";
+    }
+  } else {
+    if (window.location.pathname.includes("index.html")) {
+      _loginIconImg.src = "Assets/loginOFFHEAD.png";
+    } else {
+      _loginIconImg.src = "../Assets/loginOFFHEAD.png";
+    }
+  }
+}
+
 function enableInteractions() {
   _pageOverlay.style.display = "none";
   _loginModal.style.display = "none";
   _submitLogin.style.display = "none";
   _logoutButton.style.display = "block";
-  if (window.location.pathname.includes("index.html")){
-    _loginIconImg.src = "Assets/loginONHEAD.png";
-  }
-  else {
-    _loginIconImg.src = "../Assets/loginONHEAD.png";
-  } 
+  updateLoginIcon();
 }
 
 function logout() {
@@ -77,13 +90,7 @@ function logout() {
   _submitLogin.style.display = "block";
   _pageOverlay.style.display = "none";
   _loginModal.style.display = "none";
-  if (window.location.pathname.includes("index.html")){
-    _loginIconImg.src = "Assets/loginOFFHEAD.png";
-  }
-  else {
-    _loginIconImg.src = "../Assets/loginOFFHEAD.png";
-  } 
-
   _userInput.value = "";
   _passwordInput.value = "";
+  updateLoginIcon();
 }
