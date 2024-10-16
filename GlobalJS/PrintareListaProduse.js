@@ -46,7 +46,16 @@ function printeazaUnProdus(produs) {
   const unProdusInfo = _unProdus.querySelector(".unProdusInfo");
   unProdusInfo.addEventListener("click", () => {
     localStorage.setItem("selectedProduct", JSON.stringify(produs));
-    window.location.href = "../SingleProduct/SingleProduct.html";
+
+    window.location.href = url;
+
+    const currentPageSingleProduct = window.location.pathname;
+
+    if (currentPageSingleProduct.includes("index.html")) {
+      checkoutPage("SingleProduct/SingleProduct.html");
+    } else {
+      checkoutPage("../SingleProduct/SingleProduct.html");
+    }
   });
 
   const cartProducts = JSON.parse(localStorage.getItem("cart")) || [];

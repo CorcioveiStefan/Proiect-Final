@@ -25,7 +25,7 @@ function singleProductPrint() {
             <h2>${productData.title}</h2>
             <p class="pret">Price: $${productData.price}</p>
             <div class="rate"> 
-              <img src="/Assets/Group 88.png" alt="Rate" height="20px">
+              <img src="../Assets/Group 88.png" alt="Rate" height="20px">
               <div>5 Customer Review</div>
             </div>
             <p class="description">${productData.description}</p>

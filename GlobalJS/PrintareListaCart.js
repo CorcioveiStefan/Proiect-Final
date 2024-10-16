@@ -146,3 +146,15 @@ function pretFinal(cumparaturi) {
     return suma + produsCurent.price * count;
   }, 0);
 }
+
+function checkoutPage(url) {
+  window.location.href = url;
+
+const currentPageCheckout = window.location.pathname;
+
+if (currentPageCheckout.includes("index.html")) {
+  checkoutPage("Checkout/Checkout.html");
+} else {
+  checkoutPage("../Checkout/Checkout.html");
+}
+}
