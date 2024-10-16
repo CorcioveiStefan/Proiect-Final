@@ -44,9 +44,19 @@ function updateCartDisplay() {
   }
 }
 
-function checkoutPage() {
-  window.location.href = "../Checkout/Checkout.html";
+
+function checkoutPage(url) {
+  window.location.href = url;
 }
+const currentPageCheckout = window.location.pathname;
+
+if (currentPageCheckout.includes("Home.html")) {
+  checkoutPage("Checkout/Checkout.html");
+} else {
+  checkoutPage("../Checkout/Checkout.html");
+}
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   produseInCos(arrayCosProduse);
