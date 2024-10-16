@@ -47,7 +47,7 @@ function updateCartDisplay() {
 
 function checkoutPage(url) {
   window.location.href = url;
-}
+
 const currentPageCheckout = window.location.pathname;
 
 if (currentPageCheckout.includes("Home.html")) {
@@ -55,7 +55,7 @@ if (currentPageCheckout.includes("Home.html")) {
 } else {
   checkoutPage("../Checkout/Checkout.html");
 }
-
+}
 
 
 document.addEventListener("DOMContentLoaded", () => {
