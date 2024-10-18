@@ -1,7 +1,7 @@
 # Proiect-Final
 
 Site-ul conține patru pagini, fiecare cu propriile funcționalități. 
-Cel mai mic viewport fără a ieși din layout este de 360 px. 
+Cel mai mic viewport fără a ieși din layout este de 344 px. 
 Coșul de cumpărături și favoritele sunt integrate în HTML pentru fiecare pagină. 
 CSS-ul este modular, împărțit în fișiere pentru secțiuni care se repetă, precum și fișiere cu Media Queries corespunzătoare acelor secțiuni. 
 JavaScript-ul este, de asemenea, modular deoarece multe interacțiuni se repetă (nu am folosit importuri, dar m-am asigurat că funcțiile sunt vizibile în scopul Global). 
@@ -14,7 +14,7 @@ Mulțumesc că ai avut răbdare să arunci o privire și îți doresc o zi frumo
 
 
 The website consists of four pages, each with its own functionality.
-The smallest viewport without breaking the layout is 360 px.
+The smallest viewport without breaking the layout is 344 px.
 The cart and favorites are integrated into the HTML for each page.
 The CSS is modular, split into files for sections that repeat, as well as files with Media Queries corresponding to those sections.
 The JavaScript is also modular because many interactions are repeated (I didn't use imports, but I made sure that the functions are visible in the Global scope).

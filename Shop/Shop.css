@@ -130,7 +130,6 @@ main {
 
 .buttonsMain-top select {
   background-color: rgb(239, 224, 196);
-  color: rgb(41, 39, 39);
 
   width: 117px;
   height: 60px;
@@ -175,8 +174,6 @@ main {
 }
 
 .toggleFiltersDiv button {
-  color: rgb(41, 39, 39);
-
   width: 117px;
   height: 60px;
 

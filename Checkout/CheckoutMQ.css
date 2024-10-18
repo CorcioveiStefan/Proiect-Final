@@ -46,3 +46,9 @@
     padding: 63px 42px;
   }
 }
+
+@media screen and (max-width: 400px){
+  .cart-checkout .product-item .product-title {
+    max-width: 110px;
+  }
+}
