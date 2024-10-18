@@ -84,13 +84,7 @@ function updatePageBlocks(totalProducts) {
   let startPage = Math.max(currentPage - 1, 1);
   let endPage = Math.min(currentPage + 1, totalPages);
 
-  if (endPage - startPage < 2) {
-    if (startPage === 1) {
-      endPage = Math.min(3, totalPages);
-    } else {
-      startPage = Math.max(endPage - 2, 1);
-    }
-  }
+  
 
   for (let i = startPage; i <= endPage; i++) {
     const pageButton = document.createElement("button");
