@@ -16,7 +16,7 @@ const aduProduseleDeLaServer = async function () {
     const response = await fetch(url); // Face cererea fetch
     if (!response.ok) throw new Error("Network response was not ok"); // Verifică dacă răspunsul este ok
     const produse = await response.json(); // Transformă răspunsul în format JSON
-    localStorage.setItem("products", JSON.stringify(produse)); // Salvează produsele în localStorage
+    localStorage.setItem("productsHome", JSON.stringify(produse)); // Salvează produsele în localStorage
     printeazaProdusePaginateHome(produse, currentPage); // Afișează produsele paginată
   } catch (error) {
     console.error("There has been a problem with your fetch operation:", error); // Gestionează erorile
@@ -25,7 +25,7 @@ const aduProduseleDeLaServer = async function () {
 
 // Funcția pentru a încărca produsele inițiale
 function loadInitialProducts() {
-  const products = JSON.parse(localStorage.getItem("products")) || []; // Obține produsele din localStorage
+  const products = JSON.parse(localStorage.getItem("productsHome")) || []; // Obține produsele din localStorage
   if (products.length > 0) {
     printeazaProdusePaginateHome(products, currentPage); // Afișează produsele din localStorage
   } else {
@@ -35,7 +35,7 @@ function loadInitialProducts() {
 
 // Funcția pentru a încărca mai multe produse
 function loadMoreProducts() {
-  const products = JSON.parse(localStorage.getItem("products")) || []; // Obține produsele din localStorage
+  const products = JSON.parse(localStorage.getItem("productsHome")) || []; // Obține produsele din localStorage
   printeazaProdusePaginateHome(products, currentPage); // Afișează produsele
 }
 

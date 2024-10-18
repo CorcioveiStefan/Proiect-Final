@@ -1,10 +1,15 @@
 let currentPage = 1;
-const productsPerPage = 8;
+let productsPerPage = 8;
+let order = "asc";
+let selectedCategory ="";
 
 // Fetch products from localStorage or API
 async function aduProduseleDeLaServer() {
   try {
-    const url = `https://fakestoreapi.com/products`;
+    const url = selectedCategory 
+      ? `https://fakestoreapi.com/products/category/${selectedCategory}?sort=${order}` 
+      : `https://fakestoreapi.com/products?sort=${order}`; 
+
     const response = await fetch(url);
     if (!response.ok) throw new Error("Network response was not ok");
     const produse = await response.json();
@@ -117,3 +122,28 @@ function updateBreadcrumb(currentPage, productsPerPage, totalProducts) {
   const breadcrumbText = `Showing ${start}–${end} of ${totalProducts} results`;
   document.querySelector(".shop-breadcrumb").innerHTML = `<div>${breadcrumbText}</div>`;
 }
+
+const productPerPageElement = document.querySelector('#productPerPage');
+productPerPageElement.addEventListener('change', function (event) {
+  productsPerPage = +event.target.value;
+  currentPage = 1;
+  loadInitialProducts();
+})
+
+const orderElement = document.querySelector('#order'); 
+orderElement.addEventListener('change', function (event) {
+  order = event.target.value;
+  aduProduseleDeLaServer();
+})
+
+const categoryElement = document.querySelector('#category');
+categoryElement.addEventListener('change', function (event){
+  selectedCategory = event.target.value;
+  currentPage = 1;
+  aduProduseleDeLaServer();
+})
+
+document.getElementById("toggleButtonFilters").addEventListener("click", function() {
+  const buttonsDiv = document.querySelector(".buttonsMain-top");
+  buttonsDiv.style.display = buttonsDiv.style.display === "none" ? "flex" : "none";
+});

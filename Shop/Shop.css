@@ -35,15 +35,12 @@ main {
   background-color: #f5f5f5;
 }
 
-.listaProduse {
-  padding: 63px 100px;
-}
 .buttonsMain {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding-bottom: 48px;
+  padding: 0 36px 48px 36px;
 }
 
 .pagination {
@@ -58,7 +55,6 @@ main {
   cursor: pointer;
   background-color: white;
   border: none;
-
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
@@ -67,7 +63,7 @@ main {
 .pageBlock:hover {
   background-color: rgb(234, 202, 143);
   box-shadow: 
-    0 0 20px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(0, 0, 0, 0.2), 
     0 0 40px rgba(0, 0, 0, 0.1),
     inset 0 0 20px rgba(0, 0, 0, 0.3);
 }
@@ -88,15 +84,14 @@ main {
 .prevPage:hover,
 .nextPage:hover {
   background-color: rgb(234, 202, 143);
-  box-shadow: 
-    0 0 20px rgba(0, 0, 0, 0.2),
-    0 0 40px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1),
     inset 0 0 20px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .prevPage:active,
 .nextPage:active {
-  background-color:  rgb(238, 192, 108);
+  background-color: rgb(238, 192, 108);
   color: white;
 }
 
@@ -122,5 +117,83 @@ main {
 }
 
 .pageBlock.active:hover {
+  background-color: rgb(234, 202, 143);
+}
+
+.buttonsMain-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 36px 0 36px;
+}
+
+.buttonsMain-top select {
+  background-color: rgb(239, 224, 196);
+  color: rgb(41, 39, 39);
+
+  width: 117px;
+  height: 60px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+
+  text-align: center;
+  text-align-last: center;
+  text-overflow: hidden;
+}
+
+.buttonsMain-top select {
+  text-align: left; /* Align the text in the dropdown options to the left */
+}
+
+.buttonsMain-top select option {
+  font-size: 15px;
+}
+
+.buttonsMain-top select:hover {
+  background-color: rgb(234, 202, 143);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.buttonsMain-top select:focus {
+  outline: none; /* Removes the default outline */
+  border: none;
+}
+
+.toggleFiltersDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 33px 0 0 0;
+}
+
+.toggleFiltersDiv button {
+  color: rgb(41, 39, 39);
+
+  width: 117px;
+  height: 60px;
+
+  background-color: rgb(239, 224, 196);
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 30px;
+  padding: 0 15px;
+}
+
+.toggleFiltersDiv button:hover {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
   background-color: rgb(234, 202, 143);
 }

@@ -88,9 +88,29 @@
     <div class="shop-breadcrumb"></div>
   </header>
   <main>
+    <div class="toggleFiltersDiv"><button id="toggleButtonFilters">Filters</button></div>
+    <div class="buttonsMain-top" style="display: none;">
+      <select id="productPerPage">
+        <option value="8">8 Prod.</option>
+        <option value="6">6 Prod.</option>
+        <option value="4">4 Prod.</option>
+      </select>
+      <select id="category">
+        <option value="">All</option>
+        <option value="electronics">Elec.</option>
+        <option value="jewelery">Jewels</option>
+        <option value="men's clothing">Men</option>
+        <option value="women's clothing">Women</option>
+
+      </select>
+      <select id="order">
+        <option value="asc">^ Asc.</option>
+        <option value="desc">v Desc.</option>
+      </select>
+    </div>
     <div class="listaProduse"></div>
     <div class="buttonsMain">
-      <button class="prevPage">Previous</button>
+      <button class="prevPage">Prev.</button>
       <div class="pagination"></div>
       <button class="nextPage">Next</button>
     </div>
