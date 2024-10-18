@@ -1,3 +1,8 @@
+@media screen and (max-width: 900px) {
+  .nav-right {
+    margin-right: 30px;
+  }
+}
 @media screen and (max-width: 450px) {
   header nav .logo {
     margin-left: 15px;
@@ -10,7 +15,11 @@
   }
   header nav .pages a:hover {
     font-size: 16px;
-    text-shadow: none;
+    
     margin-right: 42px;
+  }
+  .nav-right {
+    gap: 6px;
+    margin-right: 10px;
   }
 }
