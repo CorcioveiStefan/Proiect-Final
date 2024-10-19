@@ -56,6 +56,12 @@
   }
 }
 
+@media screen and (max-width: 450px) {
+  .Product-breadcrumb {
+    padding-left: 30px;
+  }
+}
+
 @media screen and (max-width: 420px) {
   .big-img img {
     max-width: 225px;
