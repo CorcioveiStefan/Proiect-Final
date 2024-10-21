@@ -7,9 +7,14 @@ const _loginModal = document.querySelector(".login.modal");
 const _loginIcon = document.querySelector("#login-icon");
 const _loginIconImg = document.querySelector("#login-icon img");
 
-var userKeyGlobal;
 
+
+//din momentul in care se incarca pagina , verifica daca 
 document.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("isLoggedIn") === null) {
+    localStorage.setItem("isLoggedIn", "false");
+  }
+
   if (localStorage.getItem("isLoggedIn") === "true") {
     enableInteractions();
   } else {
@@ -28,37 +33,8 @@ _pageOverlay.addEventListener("click", () => {
 });
 
 _submitLogin.addEventListener("click", fetchLogin);
+
 _logoutButton.addEventListener("click", logout);
-
-async function fetchLogin() {
-  const user = _userInput.value;
-  const password = _passwordInput.value;
-
-  try {
-    const response = await fetch("https://paulghiran.com/messages/login.php", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        user: user,
-        password: password,
-      }),
-    });
-
-    const userFound = await response.json();
-    const userObject = userFound.user;
-
-    const { userKey } = userObject;
-    userKeyGlobal = userKey;
-
-    localStorage.setItem("isLoggedIn", "true");
-    enableInteractions();
-  } catch (error) {
-    console.log(error);
-    alert("User sau parola gresit/a");
-  }
-}
 
 function updateLoginIcon() {
   if (localStorage.getItem("isLoggedIn") === "true") {
@@ -93,4 +69,28 @@ function logout() {
   _userInput.value = "";
   _passwordInput.value = "";
   updateLoginIcon();
+}
+
+async function fetchLogin() {
+  const user = _userInput.value;
+  const password = _passwordInput.value;
+
+  try {
+    const response = await fetch("https://paulghiran.com/messages/login.php", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+        user: user,
+        password: password,
+      }),
+    });
+
+    localStorage.setItem("isLoggedIn", "true");
+    enableInteractions();
+  } catch (error) {
+    console.log(error);
+    alert("User sau parola gresit/a");
+  }
 }
