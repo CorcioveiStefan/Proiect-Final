@@ -39,13 +39,13 @@ _logoutButton.addEventListener("click", logout);
 function updateLoginIcon() {
   if (localStorage.getItem("isLoggedIn") === "true") {
     if (window.location.pathname.includes("/index.html")) {
-      _loginIconImg.src = "./Assets/loginONHEAD.png";
+      _loginIconImg.src = "Assets/loginONHEAD.png";
     } else {
       _loginIconImg.src = "../Assets/loginONHEAD.png";
     }
   } else {
     if (window.location.pathname.includes("/index.html")) {
-      _loginIconImg.src = "./Assets/loginOFFHEAD.png";
+      _loginIconImg.src = "Assets/loginOFFHEAD.png";
     } else {
       _loginIconImg.src = "../Assets/loginOFFHEAD.png";
     }
