@@ -41,6 +41,14 @@ window.printeazaProdusePaginate = printeazaProdusePaginate;
 
 // Load the initial products
 function loadInitialProducts() {
+  // Restore the filter state from localStorage if available
+  order = localStorage.getItem("selectedOrder") || "asc";
+  selectedCategory = localStorage.getItem("selectedCategory") || "";
+
+  // Update UI elements to reflect the restored state
+  if (orderElement) orderElement.value = order;
+  if (categoryElement) categoryElement.value = selectedCategory;
+
   const products = JSON.parse(localStorage.getItem("products")) || [];
   if (products.length > 0) {
     printeazaProdusePaginate(currentPage);
@@ -133,12 +141,14 @@ productPerPageElement.addEventListener('change', function (event) {
 const orderElement = document.querySelector('#order'); 
 orderElement.addEventListener('change', function (event) {
   order = event.target.value;
+  localStorage.setItem("selectedOrder", order);
   aduProduseleDeLaServer();
 })
 
 const categoryElement = document.querySelector('#category');
 categoryElement.addEventListener('change', function (event){
   selectedCategory = event.target.value;
+  localStorage.setItem("selectedCategory", selectedCategory);
   currentPage = 1;
   aduProduseleDeLaServer();
 })

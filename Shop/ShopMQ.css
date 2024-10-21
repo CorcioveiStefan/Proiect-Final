@@ -30,4 +30,7 @@
   .toggleFiltersDiv button {
     height: 45px;
   }
+  .shop-breadcrumb {
+    padding-left: 60px;
+  }
 }

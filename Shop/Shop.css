@@ -144,6 +144,8 @@ main {
   text-align: center;
   text-align-last: center;
   text-overflow: hidden;
+
+  border: 0.5px solid white;
 }
 
 .buttonsMain-top select {
@@ -186,6 +188,8 @@ main {
   font-weight: 300;
   line-height: 30px;
   padding: 0 15px;
+
+  border: 0.5px solid white;
 }
 
 .toggleFiltersDiv button:hover {
