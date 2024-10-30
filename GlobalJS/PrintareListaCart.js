@@ -42,7 +42,6 @@ function produsInCos(produsPrintat) {
 
     const currentPage = window.location.pathname;
 
-  // Execute different logic depending on the page
   if (currentPage.includes("/Shop.html")) {
     loadCurrentPageProducts();
   } else if (currentPage.includes("/Checkout.html")) {
@@ -81,6 +80,9 @@ function eliminareCantitateProdus(produs) {
   });
   localStorage.setItem("cart", JSON.stringify(cosDinLocalStorage));
   produseInCos(cosDinLocalStorage);
+  if (window.location.href.includes("Checkout.html")){
+    updateCheckoutDisplay();
+  }
 }
 
 function adaugareCantitateProdus(produs) {
@@ -92,6 +94,9 @@ function adaugareCantitateProdus(produs) {
   });
   localStorage.setItem("cart", JSON.stringify(cosDinLocalStorage));
   produseInCos(cosDinLocalStorage);
+  if (window.location.href.includes("Checkout.html")){
+    updateCheckoutDisplay();
+  }
 }
 
 function produseInCos(produsePrintate) {

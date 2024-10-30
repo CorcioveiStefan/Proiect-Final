@@ -26,6 +26,7 @@ const aduProduseleDeLaServer = async function () {
 // Funcția pentru a încărca produsele inițiale
 function loadInitialProducts() {
   const products = JSON.parse(localStorage.getItem("productsHome")) || []; // Obține produsele din localStorage
+  console.log(products);
   if (products.length > 0) {
     printeazaProdusePaginateHome(products, currentPage); // Afișează produsele din localStorage
   } else {

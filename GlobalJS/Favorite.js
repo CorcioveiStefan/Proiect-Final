@@ -14,7 +14,6 @@ favoriteOverlay.addEventListener("click", () => {
 });
 
 function updateFavoriteDisplay() {
-  const favoriteButton = document.getElementById("favoriteButton");
   let favoriteItemCount = document.getElementById("favoriteItemCount");
 
   if (!favoriteItemCount) {

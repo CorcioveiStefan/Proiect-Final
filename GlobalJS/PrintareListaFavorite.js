@@ -5,8 +5,6 @@ function produsInFavorite(produsPrintat) {
   const _cosFavorite = document.querySelector(".cosFavorite");
   const _unProdusFavorit = document.createElement("div");
   _unProdusFavorit.classList.add("unProdusFavorit");
-  _cosFavorite.appendChild(_unProdusFavorit);
-
   _unProdusFavorit.innerHTML = `
     <div class ="top-div-favorite">
       <div class="imgFavorite">
@@ -20,24 +18,24 @@ function produsInFavorite(produsPrintat) {
       </div>
     </div>
     `;
+  _cosFavorite.appendChild(_unProdusFavorit);
+
 
   const _buttonSterge = _unProdusFavorit.querySelector(".stergeFavorit");
-  const _buttonAdaugareDinFavorite =
-    _unProdusFavorit.querySelector(".adaugaDinFavorite");
-
   _buttonSterge.addEventListener("click", function () {
     const cosDinLocalStorage =
       JSON.parse(localStorage.getItem("favorites")) || [];
     const cosActualizat = cosDinLocalStorage.filter(
       (item) => item.id !== produsPrintat.id
     );
-
     localStorage.setItem("favorites", JSON.stringify(cosActualizat));
     produseInFavorite(cosActualizat);
     updateFavoriteDisplay();
     loadCurrentPageProducts();
   });
 
+
+  const _buttonAdaugareDinFavorite = _unProdusFavorit.querySelector(".adaugaDinFavorite");
   _buttonAdaugareDinFavorite.addEventListener("click", function () {
     adaugaInCos(produsPrintat); // Apelăm funcția adaugaInCos cu produsul curent
   });
@@ -46,7 +44,6 @@ function produsInFavorite(produsPrintat) {
 function produseInFavorite(produsePrintate) {
   const _cosFavorite = document.querySelector(".cosFavorite");
   _cosFavorite.innerHTML = "";
-
   const _optiuniFavorite = document.querySelector(".optiuniFavorite");
   _optiuniFavorite.innerHTML = "";
   produsePrintate.forEach(produsInFavorite);
@@ -56,7 +53,6 @@ function produseInFavorite(produsePrintate) {
   _butonInchidere.innerHTML = `<button>Close</button>`;
 
   const closeButton = _butonInchidere.querySelector("button");
-
   closeButton.addEventListener("click", () => {
     const favoriteDiv = document.getElementById("favoriteDiv");
     const favoriteOverlay = document.getElementById("favoriteoverlay");
